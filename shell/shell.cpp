@@ -448,6 +448,7 @@ void Shell::fileOpen()
     QMimeDatabase mimeDatabase;
 #if KIO_VERSION >= QT_VERSION_CHECK(5, 73, 0)
     QStringList mimetypes;
+    mimetypes << QStringLiteral("application/pdf");
     for (const QString &mimeName : qAsConst(m_fileformats)) {
         QMimeType mimeType = mimeDatabase.mimeTypeForName(mimeName);
         mimetypes << mimeType.name();
